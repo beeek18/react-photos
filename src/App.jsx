@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.scss';
 import { Collection } from './Collections';
+import axios from 'axios';
 
 const cats = [
   { "name": "All" },
@@ -21,13 +22,13 @@ function App() {
 
     const category = categoryId ? `category=${categoryId}` : ''
 
-    fetch(`https://63e25860ad0093bf29cdbeac.mockapi.io/photo_collections?page=${page}&limit=9&${category}`)
-      .then((res) => res.json())
-      .then(json => {
-        setCollections(json)
+    axios
+      .get(`https://63e08d9159bb472a742402db.mockapi.io/photo_collections?page=${page}&limit=9&${category}`)
+      .then(({ data }) => {
+        setCollections(data)
       })
       .catch((err) => {
-        console.warn(err)
+        console.log(err)
         alert('ERROR TO GET PHOTO')
       })
       .finally(() => setIsLoading(false))

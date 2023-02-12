@@ -1,6 +1,7 @@
 <h1>My favorite manga moments 😎
 
 <h4>
+<li>Axios
 <li>Filtering collections using categories
 <li>Collection Search
 <li>Pagination
