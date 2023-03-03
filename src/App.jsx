@@ -23,7 +23,7 @@ function App() {
     const category = categoryId ? `category=${categoryId}` : ''
 
     axios
-      .get(`https://63e08d9159bb472a742402db.mockapi.io/photo_collections?page=${page}&limit=9&${category}`)
+      .get(`https://63d0153a10982404378ccc77.mockapi.io/photo_collections?page=${page}&limit=9&${category}`)
       .then(({ data }) => {
         setCollections(data)
       })
